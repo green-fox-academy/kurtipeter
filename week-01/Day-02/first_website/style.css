@@ -1,0 +1,60 @@
+body {
+	background: url(img/background.png);
+	margin: 0;	}
+
+
+#main {	
+	/*margin: 0 10% 0 10%;*/
+	padding: 0 10% 0 10%;	}
+
+
+#fej {	
+	margin: 0;
+	padding: 0 10% 0 10%;
+	overflow: auto;
+	background-color: #333333;
+	text-align: right;	}
+
+nav {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 52px;	}
+
+
+img {
+	padding: 10px 10px 10px 0;	}				
+
+
+#lines {	
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;	}
+
+
+#alcim {
+	color: #FF0099;	}
+
+
+a {	
+	vertical-align: middle;
+	color: #FF0099;
+	padding: 0 10px 0 10px;	}
+
+
+h1 {
+	font-size: 40px;
+	font-weight: bold;	}
+
+
+h2 {
+	text-align: left;
+	color: #FF0099;	}
+
+
+h3 {
+	text-align: center;
+	font-weight: bold;	}
+
+h4 {
+	text-align: left;
+	font-weight: bold;	}	
