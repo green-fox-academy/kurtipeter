@@ -12,34 +12,28 @@ namespace GreenFox
 
             for (int i = 0; i < squareSize; i++)
             {
-                if ((i == 0) || (i == squareSize - 1))
+                for (int j = 0; j < squareSize; j++)
                 {
-                    for (int j = 0; j < squareSize; j++)
+                    if ((i == 0) || (j == 0))
                     {
                         Console.Write("%");
                     }
-                    Console.WriteLine("");
-                }
-                else
-                {
-                    for (int x = 0; x < squareSize; x++)
+                    else if ((i == squareSize - 1) || (j == squareSize -1))
                     {
-                        if ((x == 0) || (x == squareSize -1))
-                        {
-                            Console.Write("%");
-                        }
-                        else if (x == i)
-                        {
-                            Console.Write("%");
-                        }
-                        else
-                        {
-                            Console.Write(" ");
-                        }
+                        Console.Write("%");
                     }
-                    Console.WriteLine(" ");
+                    else if (i == j)
+                    {
+                        Console.Write("%");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
                 }
+                Console.WriteLine("");
             }
+            Console.ReadLine();
         }
     }
 }
