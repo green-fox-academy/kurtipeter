@@ -24,7 +24,7 @@ namespace GreenFox
                 {
                     for (int x = 0; x < squareSize; x++)
                     {
-                        if ((x == 0) || (x == squareSize - 1))
+                        if ((x == 0) || (x == squareSize -1))
                         {
                             Console.Write("%");
                         }
