@@ -35,7 +35,8 @@ namespace CenterBoxFunction
 
         public void DrawBoxToCenter(FoxDraw foxDraw,int boxSize)
         {
-            Color randomColor = Color.FromRgb((byte)random.Next(255), (byte)random.Next(255), (byte)random.Next(255));
+            byte colorFragment = (byte)random.Next(255);
+            Color randomColor = Color.FromRgb(colorFragment, colorFragment, colorFragment);
             foxDraw.FillColor(randomColor);
 
             double x = (foxDraw.Canvas.Width / 2) - (boxSize / 2);
