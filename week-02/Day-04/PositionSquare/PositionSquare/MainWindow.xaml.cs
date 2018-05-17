@@ -33,12 +33,11 @@ namespace PositionSquare
         public static void DrawSquareInPosition(FoxDraw foxDraw, int x, int y)
         {
             Random rnd = new Random();
-            for (int i = 1; i < 4 + 1; i++)
-            {
-                foxDraw.FillColor(Color.FromRgb((byte)rnd.Next(0, 255), (byte)rnd.Next(0, 255), (byte)rnd.Next(0, 255)));
+   
+            foxDraw.FillColor(Color.FromRgb((byte)rnd.Next(0, 255), (byte)rnd.Next(0, 255), (byte)rnd.Next(0, 255)));
 
-                foxDraw.DrawRectangle(x, y, 50, 50);
-            }
+            foxDraw.DrawRectangle(x, y, 50, 50);
+
         }
     }
 }
