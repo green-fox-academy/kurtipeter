@@ -65,12 +65,25 @@ namespace Lottery
             return numberCounter;
         }
 
+        /*
         public static void MostCommLotteryNumb(Dictionary<string, int> data)
         {
-            foreach (KeyValuePair<string, int> item in data)
+            foreach (KeyValuePair<string, int> number in data.OrderBy(key => key.Value));
+            //self-note: try to find a non linq solution
+        } */
+
+        public static void MostCommLotteryNumb2(Dictionary<string, int> data)
+        {
+            foreach (KeyValuePair<string, int> itemToCompare in data)
             {
-                Console.WriteLine("{0}: {1}", item.Key, item.Value);
+                foreach (KeyValuePair<string, int> restOfTheItem in data)
+                {
+                    if (itemToCompare. )
+                    {
+
+                    }
+                }
             }
-        } 
+        }
     }
 }
