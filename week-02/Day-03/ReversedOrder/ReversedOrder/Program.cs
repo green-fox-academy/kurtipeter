@@ -23,7 +23,7 @@ namespace ReversedOrder
                 if (j != 0)
                 {
                     revOrderCont += "\n";
-                }                
+                }              
             }
 
             StreamWriter sw = new StreamWriter("orderReversed.txt");

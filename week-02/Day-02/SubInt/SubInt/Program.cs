@@ -32,7 +32,7 @@ namespace SubInt
 
                 foreach (var item in tempContainer)
                 {
-                    if (Int32.Parse(item.ToString()) == inputNum && alreadyContainTheNumber == 0)
+                    if (Convert.ToInt32(item.ToString()) == inputNum && alreadyContainTheNumber == 0)
                     {
                         indexContainer += Convert.ToString(i) + ", ";
                         alreadyContainTheNumber++;
