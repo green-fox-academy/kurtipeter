@@ -66,10 +66,11 @@ namespace DiceSet
             }
         }
 
-
         public static void Main(string[] args)
         {
             RandomValue = new Random();
+            DiceSet.Roll();
+            DiceSet.WriteOutDices(DiceSet.GetCurrent());
             DiceSet.WriteOutDices(DiceSet.DoSixes());
             Console.ReadLine();
         }
