@@ -6,7 +6,7 @@ namespace AircraftCarrier
 {
     class Carrier
     {
-        private List<Aircraft> storedAircrafts;
+        private List<Aircraft> storedAircrafts = new List<Aircraft>();
         private int storedAmmo;
         private int carrierHealth;
 
