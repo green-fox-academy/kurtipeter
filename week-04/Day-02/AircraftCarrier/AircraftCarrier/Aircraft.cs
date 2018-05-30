@@ -30,6 +30,14 @@ namespace AircraftCarrier
             }
         }
 
+        public int GetbaseDamage
+        {
+            get
+            {
+                return baseDamage;
+            }
+        }
+
         public int Figth() 
         {
             int damage = currentAmmo * baseDamage;
@@ -37,19 +45,33 @@ namespace AircraftCarrier
             return damage;
         }
 
-        public void Refill(Carrier carrier)
+        public int DamageCapacity() 
         {
-            if (carrier.GetSetStoredAmmo > maxAmmo)
-            {
-                currentAmmo += maxAmmo - currentAmmo;
-                carrier.GetSetStoredAmmo -= currentAmmo; 
-            }
-            else
-            {
-                currentAmmo += carrier.GetSetStoredAmmo;
-                carrier.GetSetStoredAmmo -= currentAmmo;
-            }
+            int damage = currentAmmo * baseDamage;
+            return damage;
         }
 
+        public int Refill(int carrierAmmo)
+        {
+            if (currentAmmo != maxAmmo)
+            {
+                if (carrierAmmo > maxAmmo)
+                {
+                    currentAmmo += maxAmmo - currentAmmo;
+                    return currentAmmo;
+                }
+                else
+                {
+                    currentAmmo += carrierAmmo;
+                    return currentAmmo;
+                }
+            }
+            return 0;
+        }
+
+        public string GetTypeOfClass()
+        {
+            return this.GetType().Name;
+        }
     }
 }
