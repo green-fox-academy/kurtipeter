@@ -6,7 +6,7 @@ namespace AircraftCarrier
     {
         static void Main(string[] args)
         {
-            Carrier redCarrier = new Carrier(300, 1000);
+            Carrier redCarrier = new Carrier(300, 1000, "The magnificent RedCarrier destroyer of worlds.");
             F16 redF16_1 = new F16();
             F35 redF35_1 = new F35();
             F16 redF16_2 = new F16();
@@ -19,25 +19,28 @@ namespace AircraftCarrier
             redCarrier.FillAllAircraft();
             redCarrier.FillAllAircraft();
             Console.WriteLine(redCarrier.GetStatus());
-            /*
-            Carrier blueCarrier = new Carrier(200, 500);
-            Carrier greenCarrier = new Carrier(200, 1000);
 
-            Console.WriteLine(redCarrier.GetStatus());
+            Carrier blueCarrier = new Carrier(200, 500, "Some green boy, ready to be destroyed");
+            Carrier greenCarrier = new Carrier(200, 2000, "This one is thougher");
+
             Console.WriteLine();
 
             redCarrier.FillAllAircraft();
-            Console.WriteLine(redF35_1.GetcurrentAmmo);
-            Console.WriteLine(redF16_1.GetcurrentAmmo);
-            Console.WriteLine(redCarrier.GetSetStoredAmmo);
-            Console.WriteLine();
+
 
             Console.WriteLine(redCarrier.GetStatus());
+            Console.WriteLine();
+            Console.WriteLine(blueCarrier.GetStatus());
+            Console.WriteLine();
             Console.WriteLine(redCarrier.FigthtWithAllAircraft(blueCarrier));
             Console.WriteLine(blueCarrier.GetSetcarrierHealth);
+            Console.WriteLine();
             redCarrier.FillAllAircraft();
+            Console.WriteLine(greenCarrier.GetStatus());
+            Console.WriteLine();
             Console.WriteLine(redCarrier.FigthtWithAllAircraft(greenCarrier));
-            */
+            Console.WriteLine(greenCarrier.GetSetcarrierHealth);
+            
             Console.ReadLine();
         }
     }

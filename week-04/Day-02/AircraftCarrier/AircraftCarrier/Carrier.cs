@@ -9,11 +9,13 @@ namespace AircraftCarrier
         private List<Aircraft> storedAircrafts = new List<Aircraft>();
         private int storedAmmo;
         private int carrierHealth;
+        private string name;
 
-        public Carrier(int ammo, int health)
+        public Carrier(int ammo, int health, string name)
         {
             this.storedAmmo = ammo;
             this.carrierHealth = health;
+            this.name = name;
         }
 
         public int GetSetcarrierHealth
@@ -69,7 +71,6 @@ namespace AircraftCarrier
                     sortedAircrafts.Add(aircraft);
                 }
             }
-
             return sortedAircrafts;
         }
 
@@ -113,13 +114,13 @@ namespace AircraftCarrier
 
         public string GetStatus()
         {
-            string output = string.Format("HP: {0}, Aircraft count: {1}, Ammo Storage: {2}, Total damage: {3} \nAircrafts: \n"
-            , carrierHealth, storedAircrafts.Count, storedAmmo,TotalDamageCapacity());
+            string output = string.Format("Name: {0}\nHP: {1}, Aircraft count: {2}, Ammo Storage: {3}, Total damage: {4} \nAircrafts: \n"
+            ,name, carrierHealth, storedAircrafts.Count, storedAmmo,TotalDamageCapacity());
 
             foreach (Aircraft aircraft in storedAircrafts)
             {
                 output += string.Format("Type: {0}, Ammo: {1}, Base Damage: {2}, All Damage: {3}"
-                    , aircraft.GetTypeOfClass(),aircraft.GetcurrentAmmo,aircraft.GetbaseDamage, aircraft.Figth() + "\n");
+                    , aircraft.GetTypeOfClass(),aircraft.GetcurrentAmmo,aircraft.GetbaseDamage, aircraft.DamageCapacity() + "\n");
             }
             return output;
         }
