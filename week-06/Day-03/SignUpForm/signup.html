@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="stylesheet.css" type="text/css">
     <title>Login Form</title>
   </head>
+
   <body>
-    <form action="action_page.php" method="get">
 
-       <h1>ACCOUNT LOGIN</h1>
+    <button onclick="myFunction()">Click Me</button>
 
-       <div class="container">
-         <label for="uname"><b>USERNAME</b></label>
-         <input type="text" name="uname" required autofocus>
-
-         <label for="psw"><b>PASSWORD</b></label>
-         <input type="password" name="psw" required>
-       </div>
-
-       <div id="psw">
-         <span>Forgot <a href="#">Password?</a></span>
-         <p class="clear-me"></p>
-       </div>
-
-       <div>
-         <button id="login-btn" type="submit"><b>Login</b></button>
-       </div>
-
+    <form action="https://newsletter-ws.herokuapp.com/register" method="post">
+      <input type="text" name="name" placeholder="Username" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="passwordConfirmation" onchange="Validate()" placeholder="Retype password" required>
+      <input type="submit" value="Submit">
+      <p class="disgrace">You disgrace u cant even retype your own password.</p>
     </form>
+
+    <script type="text/javascript">
+
+      function myFunction(){
+      document.getElementByClass("disgrace").style.color = "green";
+      }
+
+      function Validate() {
+        var password = document.getElementByName("password").value;
+        var confirmPassword = document.getElementByName("passwordConfirmation").value;
+        if (password != confirmPassword) {
+          document.getElementByClass("disgrace").style.display = "none";
+        }
+        else {
+          document.getElementByClass("disgrace").style.display = "block";
+        }
+     }
+
+   </script>
   </body>
 </html>

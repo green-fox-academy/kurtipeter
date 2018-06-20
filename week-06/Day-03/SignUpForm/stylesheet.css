@@ -9,3 +9,8 @@ form{
 div.formgrid{
   float: left;
 }
+
+p.disgrace{
+  display: block;
+  color: red;
+}
