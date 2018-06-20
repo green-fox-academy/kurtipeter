@@ -1,0 +1,11 @@
+form{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  color: #707070
+}
+
+div.formgrid{
+  float: left;
+}
