@@ -1,0 +1,19 @@
+﻿@model SayHelloToAllTheWorld.Models.Greeting
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        p {
+            color: @Model.Color;
+            font-size: @Model.Size;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        @Model.Greet, @Model.Name!
+    </p>
+</body>
+</html>
