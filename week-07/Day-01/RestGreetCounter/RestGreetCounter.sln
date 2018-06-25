@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldUserRestApp", "HelloWorldRestApp\HelloWorldUserRestApp.csproj", "{A5D443E8-3F9A-4715-B6EE-98AEC722E1FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestGreetCounter", "RestGreetCounter\RestGreetCounter.csproj", "{993C226D-E5B2-48D4-94D3-CCDF1B094808}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A5D443E8-3F9A-4715-B6EE-98AEC722E1FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5D443E8-3F9A-4715-B6EE-98AEC722E1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5D443E8-3F9A-4715-B6EE-98AEC722E1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5D443E8-3F9A-4715-B6EE-98AEC722E1FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993C226D-E5B2-48D4-94D3-CCDF1B094808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993C226D-E5B2-48D4-94D3-CCDF1B094808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993C226D-E5B2-48D4-94D3-CCDF1B094808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993C226D-E5B2-48D4-94D3-CCDF1B094808}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9FD3B110-501A-4732-996A-8D5F5E59696D}
+		SolutionGuid = {FDC33F09-18EC-4998-80B8-3A4EA5FF0816}
 	EndGlobalSection
 EndGlobal
