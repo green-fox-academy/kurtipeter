@@ -5,10 +5,48 @@
 <head>
     <title>The Bank Of Simba</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #4CAF50;
+                color: white;
+            }
+    </style>
 </head>
 <body>
-    <p>
-        Name: @Model.BankAcc.Name, Balance: @Model.BankAcc.Balance, AnimalType: @Model.BankAcc.AnimalType 
-    </p>
+    <table id="customers">
+        <tr>
+            <th>Name:</th>
+            <th>Balance:</th>
+            <th>AnimalType:</th>
+        </tr>
+        @for (var i = 0; i < @Model.ListOfBankAcc.Count; i++)
+        {<tr>
+                <td>@Model.ListOfBankAcc[i].Name</td>
+                <td>@Model.ListOfBankAcc[i].Balance</td>
+                <td>@Model.ListOfBankAcc[i].AnimalType</td>
+        </tr>}
+    </table>
 </body>
 </html>
