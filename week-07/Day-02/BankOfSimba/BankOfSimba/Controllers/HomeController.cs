@@ -10,6 +10,12 @@ namespace BankOfSimba.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("")]
+        public IActionResult MainIndex()
+        {
+            return Redirect("main");
+        }
+
         public static HomeIndexViewModel hivm = new HomeIndexViewModel();
 
         [Route("create")]
