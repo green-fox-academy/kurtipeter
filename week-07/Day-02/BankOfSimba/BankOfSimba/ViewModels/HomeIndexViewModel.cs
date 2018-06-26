@@ -9,6 +9,7 @@ namespace BankOfSimba.ViewModels
     public class HomeIndexViewModel
     {
         public BankAccount BankAcc { get; set; }
-        public List<BankAccount> ListOfBankAcc { get; set; }
+        public List<BankAccount> ListOfBankAcc = new List<BankAccount>();
+        public List<string> evilCharacters = new List<string>() { "Scar", "Ed", "Shenzi", "Banzai" };
     }
 }

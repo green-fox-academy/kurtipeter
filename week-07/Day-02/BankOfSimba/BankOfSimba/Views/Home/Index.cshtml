@@ -10,21 +10,11 @@
             font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
             border-collapse: collapse;
             width: 100%;
-        }
-
+            }
             #customers td, #customers th {
-                border: 1px solid #ddd;
+                border: 1px solid #f2f2f2;
                 padding: 8px;
             }
-
-            #customers tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-
-            #customers tr:hover {
-                background-color: #ddd;
-            }
-
             #customers th {
                 padding-top: 12px;
                 padding-bottom: 12px;
@@ -32,21 +22,57 @@
                 background-color: #4CAF50;
                 color: white;
             }
+            tr.king-True-evil-False{
+                background-color: gold;
+            }
+
+            tr.king-False-evil-True {
+                background-color: #ddd;
+            }
     </style>
 </head>
 <body>
+
+    <form action="addMoney" method="post">
+        <button type="submit" value="Submit">RainMoney</button>
+    </form>
+
+    <form action="addBankAcc" method="post">
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" />
+
+        <label for="animaltype">AnimalType</label>
+        <input type="text" id="animaltype" name="animalType" />
+
+        <label for="king">King???</label>
+        <input type="checkbox" id="king" name="king" value="True"/>
+
+        <label for="balance">Balance</label>
+        <input type="number" id="balance" name="balance" />
+
+        <button type="submit" value="Submit">Send IN</button>
+    </form>
+
     <table id="customers">
         <tr>
+            <th>Index:</th>
             <th>Name:</th>
             <th>Balance:</th>
             <th>AnimalType:</th>
+            <th>King??</th>
+            <th>Evil?</th>
         </tr>
         @for (var i = 0; i < @Model.ListOfBankAcc.Count; i++)
-        {<tr>
+        {<tr class="king-@Model.ListOfBankAcc[i].King.ToString()-evil-@Model.evilCharacters.Contains(Model.ListOfBankAcc[i].Name).ToString()">
+                <td>@i</td>
                 <td>@Model.ListOfBankAcc[i].Name</td>
-                <td>@Model.ListOfBankAcc[i].Balance</td>
+                <td>@Model.ListOfBankAcc[i].GetBalance()</td>
                 <td>@Model.ListOfBankAcc[i].AnimalType</td>
+                <td>@Model.ListOfBankAcc[i].King</td>
+                <td>@Model.evilCharacters.Contains(Model.ListOfBankAcc[i].Name).ToString()</td>
         </tr>}
     </table>
+
 </body>
 </html>
