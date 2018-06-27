@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagramm", "Anagramm\Anagramm.csproj", "{39DCEC5B-32C2-4922-B99E-11AA6BD3E6CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39DCEC5B-32C2-4922-B99E-11AA6BD3E6CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39DCEC5B-32C2-4922-B99E-11AA6BD3E6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39DCEC5B-32C2-4922-B99E-11AA6BD3E6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39DCEC5B-32C2-4922-B99E-11AA6BD3E6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCDF0A2F-13C5-4170-B175-A969E00E68D6}
+	EndGlobalSection
+EndGlobal

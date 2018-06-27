@@ -1,0 +1,14 @@
+﻿@model Anagramm.Anagram.Anagrammer
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>This is my mainpage</h2>
+<form action="/" method="post">
+    <label for="anagram"></label>
+    <input type="text" id="anagram" name="anagram" />
+    <button type="submit" value="submit">Anagramm it my man!</button>
+</form>
+
+<p>@Model.GetResult()</p>
