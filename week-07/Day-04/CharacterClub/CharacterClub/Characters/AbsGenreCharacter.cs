@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CharacterClub.Characters
 {
-    public abstract class Character
+    public abstract class AbsGenreCharacter
     {
         public string Name { get; set; }
         public string Food { get; set; }

@@ -1,11 +1,37 @@
-﻿
+﻿@model bool
 @{
     ViewData["Title"] = "Login";
 }
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <style>
+            p#nothidden-True {
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Here you can LOGIN, please type in your character's name:</h2>
+        <form action="/login" method="post">
+            <input type="text" name="name" placeholder="character name" />
+            <button type="submit" name="submit_loginname">LOGIN</button>
+        </form>
+        <p id="nothidden-@Model">Invalid username</p>
+    </body>
+</html>
 
-<h2>Here you can LOGIN, please in your character's name:</h2>
-<form action="/login" method="post">
-    <input type="text" name="name" placeholder="character name" />
-    <button type="submit" name="submit_loginname">LOGIN</button>
-</form>
 
+
+@*<table>
+    <tr>
+        <th>Name</th> 
+        <th>ImgSource</th> 
+    </tr>
+    @foreach (var item in Model.characterList)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.imgSource</td>
+        </tr>
+    }
+</table>*@

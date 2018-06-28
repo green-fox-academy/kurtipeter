@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 
 namespace CharacterClub.Characters
 {
-    public class Pokemon : Character
+    public class Pokemon : AbsGenreCharacter
     {
+        public Pokemon()
+        {
+        }
     }
 }

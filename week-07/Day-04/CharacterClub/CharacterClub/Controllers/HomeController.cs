@@ -10,12 +10,11 @@ namespace CharacterClub.Controllers
 {
     public class HomeController : Controller
     {
-        Character character;
-        HomeService homeService = new HomeService();
+        AbsGenreService homeService;
 
-        public HomeController(Character character)
+        public HomeController(AbsGenreService homeService)
         {
-            this.character = character;
+            this.homeService = homeService;
         }
 
         [HttpGet("/")]
@@ -27,34 +26,55 @@ namespace CharacterClub.Controllers
         [HttpPost("/")]
         public IActionResult Create(string name)
         {
-            //create a new instance of Character!!
+            homeService.CreateChar(name, "test");
             return Redirect("/login");
         }
 
         [HttpGet("/login")]
-        public IActionResult Login(string name)
+        public IActionResult Login()
         {
-            return View();
+            return View(true);
         }
 
         [HttpPost("/login")]
         public IActionResult LoginChar(string name)
         {
-            //validate, if true redirect and show info
-            return Redirect("/show");
+            bool isNameValid = homeService.CheckIfCharacterExists(name);
+            if (isNameValid)
+            {
+                return Redirect("/show");
+            }
+            return View("Login", isNameValid);
         }
 
         [HttpGet("/show")]
         public IActionResult ShowChar()
         {
-            //validate, if true redirect and show info
+            return View(homeService);
+        }
+
+        //[HttpPost("/show")]
+        //public IActionResult ReturnHome()
+        //{
+        //    return Redirect("/");
+        //}
+
+        [HttpGet("/nutritionStore")]
+        public IActionResult Nutrition()
+        {
             return View();
         }
 
-        [HttpPost("/show")]
-        public IActionResult ReturnHome()
+        [HttpGet("/actionHistory")]
+        public IActionResult ActionHistory()
         {
-            return Redirect("/");
+            return View();
+        }
+
+        [HttpGet("/trickCenter")]
+        public IActionResult TrickCenter()
+        {
+            return View();
         }
     }
 }

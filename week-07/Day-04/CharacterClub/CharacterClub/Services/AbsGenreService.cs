@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace CharacterClub.Services
 {
-    public class HomeService
+    public abstract class AbsGenreService
     {
-        public List<Character> characterList;
+        public List<AbsGenreCharacter> characterList;
+        public List<string> imgSources;
 
         public bool CheckIfCharacterExists(string name)
         {
@@ -16,5 +17,6 @@ namespace CharacterClub.Services
             return output;
         }
 
+        public abstract void CreateChar(string name, string imgSource);
     }
 }
