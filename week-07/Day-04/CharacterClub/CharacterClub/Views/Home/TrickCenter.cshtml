@@ -1,8 +1,25 @@
-﻿
-@{
-    ViewData["Title"] = "TrickCenter";
-}
+﻿@model CharacterClub.Services.AbsGenreService
 
 @await Html.PartialAsync("Navigation");
 <h2>TrickCenter</h2>
+<h1>We got the moves you are looking for my Friend</h1>>
+<form action="/trickCenter" method="post">
+    <button type="submit">Add Chosen Attacks</button>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Power</th>
+        </tr>
+        @for (int i = 0; i < @Model.attackMovesPool.Count; i++)
+        {
+            <tr>
+                <td><input type="checkbox" name="attacks" value="@i"></td>
+                <td>@Model.attackMovesPool[i].Name</td>
+                <td>@Model.attackMovesPool[i].AttackType</td>
+                <td>@Model.attackMovesPool[i].Power</td>
+            </tr>
+        }
+    </table>
+</form>
 

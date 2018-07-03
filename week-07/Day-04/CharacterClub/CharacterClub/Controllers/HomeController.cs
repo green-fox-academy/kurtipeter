@@ -20,13 +20,13 @@ namespace CharacterClub.Controllers
         [HttpGet("/")]
         public IActionResult Index()
         {
-            return View();
+            return View(homeService);
         }
 
         [HttpPost("/")]
-        public IActionResult Create(string name)
+        public IActionResult Create(string name, string img)
         {
-            homeService.CreateChar(name, "test");
+            homeService.CreateChar(name, img);
             return Redirect("/login");
         }
 
@@ -42,6 +42,7 @@ namespace CharacterClub.Controllers
             bool isNameValid = homeService.CheckIfCharacterExists(name);
             if (isNameValid)
             {
+                homeService.SetCurrentChar(name);
                 return Redirect("/show");
             }
             return View("Login", isNameValid);
@@ -62,7 +63,35 @@ namespace CharacterClub.Controllers
         [HttpGet("/nutritionStore")]
         public IActionResult Nutrition()
         {
-            return View();
+            return View(homeService);
+        }
+
+        [HttpPost("/nutritionStore")]
+        public IActionResult AddNutritionToChar(string drink, string food)
+        {
+            if (drink != null)
+            {
+                homeService.characterList[homeService.currentChar].Drink = drink;
+            }
+            if (food != null)
+            {
+                homeService.characterList[homeService.currentChar].Food = food;
+            }
+            return Redirect("/nutritionStore");
+        }
+
+        [HttpPost("/nutritionStore/addToStore")]
+        public IActionResult AddNutritionToStore(string drink, string food)
+        {
+            if (!homeService.CheckIfItExists("Drinks", drink))
+            {
+                homeService.AddNewDrink(drink);
+            }
+            if (!homeService.CheckIfItExists("Foods", food))
+            {
+                homeService.AddNewFood(food);
+            }
+            return Redirect("/nutritionStore");
         }
 
         [HttpGet("/actionHistory")]
@@ -74,7 +103,13 @@ namespace CharacterClub.Controllers
         [HttpGet("/trickCenter")]
         public IActionResult TrickCenter()
         {
-            return View();
+            return View(homeService);
+        }
+
+        [HttpPost("/trickCenter")]
+        public IActionResult AddTrick(ICollection<string> attacks)
+        {
+            return View("AddTrick", attacks);
         }
     }
 }

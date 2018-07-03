@@ -1,0 +1,11 @@
+﻿@model ICollection<string>
+@{
+    ViewData["Title"] = "History";
+}
+
+<h2>This was the added string:</h2>
+@foreach (var item in Model)
+{
+    <p>@item</p>
+}
+

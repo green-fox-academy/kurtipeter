@@ -1,14 +1,21 @@
-﻿
+﻿@model CharacterClub.Services.AbsGenreService
 @{
     ViewData["Title"] = "Index";
 }
 
 <h2>This is the main page</h2>
 
+<h2>If you don't know any character create a new one below</h2>
+
 <form action="/" method="post">
-    <h2>If you don't know any character create a new one below</h2>
     <label>Give a name to your character:</label>
-    <input type="text" name="name"/>
+    <input type="text" name="name" required/>
+    <select name="img">
+        @foreach(KeyValuePair<string, string> item in @Model.imgSources)
+        {
+            <option value="@item.Value">@item.Key</option>
+        }
+    </select>
     <button type="submit" name="submit_create">Create character</button>
 </form>
 

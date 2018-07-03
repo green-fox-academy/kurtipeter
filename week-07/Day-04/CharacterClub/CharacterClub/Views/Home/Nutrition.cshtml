@@ -2,4 +2,30 @@
 
 @await Html.PartialAsync("Navigation");
 
-<h1>Partial view of nutrition store</h1>
+<h1>Nutrition store</h1>
+
+<h2>Add new nutrition to store</h2>>
+<form action="/nutritionStore/addToStore" method="post">
+    <label for="food">Add food</label>
+    <input type="text" name="food" value="" />
+    <label for="drink">Add drink</label>
+    <input type="text" name="drink" value="" />
+    <button type="submit">Add</button>
+</form>
+
+<h2>Add new nutrition to character</h2>>
+<form action="/nutritionStore" method="post">
+    <select name="food">
+        @foreach (var item in @Model.nutrition.Foods)
+        {
+            <option value="@item">@item</option>
+        }
+    </select>
+    <select name="drink">
+        @foreach (var item in @Model.nutrition.Drinks)
+        {
+            <option value="@item">@item</option>
+        }
+    </select>
+    <button type="submit">Add</button>
+</form>

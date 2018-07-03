@@ -7,8 +7,12 @@ namespace CharacterClub.Characters
 {
     public class Pokemon : AbsGenreCharacter
     {
+        public List<AttackMoves> attacks;
+
         public Pokemon()
         {
+            imgSource = "/../img_pokemon/pikachu.png";
+            attacks = new List<AttackMoves>();
         }
     }
 }

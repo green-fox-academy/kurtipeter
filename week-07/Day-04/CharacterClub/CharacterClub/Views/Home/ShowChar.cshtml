@@ -5,7 +5,8 @@
 
 @await Html.PartialAsync("Navigation");
 
-<h2>@Model.characterList[0].Name</h2>
+<h2>@Model.characterList[Model.currentChar].Name</h2>
+<img src="@Model.characterList[Model.currentChar].imgSource" alt="characterImg" width="200" height="200"/>
 
 
 
