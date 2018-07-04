@@ -10,6 +10,6 @@ namespace TestApplication.Repository
     public interface IRepository
     {
         void AddPokemon(Pokemon pokemon);
-        ICollection<Pokemon> GetPokemons();
+        List<Pokemon> GetPokemons();
     }
 }

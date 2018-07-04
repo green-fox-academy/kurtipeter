@@ -1,11 +1,24 @@
-﻿
-@{
-    ViewData["Title"] = "PetiIndex";
-}
+﻿@model List<TestApplication.Context.Pokemon>
 
 <h2>Give me a pokemon my friend</h2>
 <form action="/peti" method="post">
     <input type="text" name="name" placeholder="Name" />
     <input type="text" name="type" placeholder="Type" />
-    <input type="int" name="level" placeholder="Level" />
+    <input type="number" name="level" placeholder="Level" />
+    <button type="submit" name="submit">Submit</button>
 </form>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Level</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Type</td>
+            <td>@item.Level</td>
+        </tr>
+    }
+</table>

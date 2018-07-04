@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TestApplication.Migrations
 {
-    public partial class PetiDbContext : Migration
+    public partial class PetiDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

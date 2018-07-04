@@ -19,9 +19,10 @@ namespace TestApplication.Repository
         public void AddPokemon(Pokemon pokemon)
         {
             dbContext.Pokemons.Add(pokemon);
+            dbContext.SaveChanges();
         }
 
-        public ICollection<Pokemon> GetPokemons()
+        public List<Pokemon> GetPokemons()
         {
             return dbContext.Pokemons.ToList();
         }

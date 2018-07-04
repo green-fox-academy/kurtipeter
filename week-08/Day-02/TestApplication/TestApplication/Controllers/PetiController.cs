@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TestApplication.Context;
 using TestApplication.Services;
+using TestApplication.Context;
 
 namespace TestApplication.Controllers
 {
@@ -20,14 +21,14 @@ namespace TestApplication.Controllers
         [HttpGet]
         public IActionResult PetiIndex()
         {
-            return View();
+            return View(myService.GetPokemons());
         }
 
         [HttpPost]
         public IActionResult AddPoke(string name, string type, int level)
         {
             myService.AddPokemon(new Pokemon { Name = name, Type = type, Level = level });
-            return View(myService.GetPokemons());
+            return View("PetiIndex",myService.GetPokemons());
         }
     }
 }

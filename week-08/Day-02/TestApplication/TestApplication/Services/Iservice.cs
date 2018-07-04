@@ -9,6 +9,6 @@ namespace TestApplication.Services
     public interface IService
     {
         void AddPokemon(Pokemon pokemon);
-        ICollection<Pokemon> GetPokemons();
+        List<Pokemon> GetPokemons();
     }
 }

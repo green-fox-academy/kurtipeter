@@ -9,8 +9,8 @@ using TestApplication.Context;
 namespace TestApplication.Migrations
 {
     [DbContext(typeof(PetiDbContext))]
-    [Migration("20180703151334_PetiDbContext")]
-    partial class PetiDbContext
+    [Migration("20180703152843_PetiDb")]
+    partial class PetiDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -21,7 +21,7 @@ namespace TestApplication.Services
             repository.AddPokemon(pokemon);
         }
 
-        public ICollection<Pokemon> GetPokemons()
+        public List<Pokemon> GetPokemons()
         {
             return repository.GetPokemons();
         }
