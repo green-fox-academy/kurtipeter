@@ -1,0 +1,42 @@
+﻿@using WebApp.Services
+@model List<ThingToDo>
+<h1>Very nice!! U made me feel alive!</h1>
+<h2>Add ToDo</h2>
+<form action="/ToDo" method="post">
+    <input type="text" name="description" placeholder="Description" />
+    <input type="number" name="priority" placeholder="Priority" min="1" max="3" />
+    <button type="submit" name="submit">submit</button>
+</form>
+<h2>Current ToDo List</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Priority</th>
+        <th>IsDone</th>
+        <th>CheckIt</th>
+        <th>Delete</th>
+    </tr>
+    @if (Model != null)
+    {
+        @for (int i = 0; i < @Model.Count; i++)
+        {
+            <tr>
+                <td>@i</td>
+                <td>@Model[i].Description</td>
+                <td>@Model[i].Priority</td>
+                <td>@Model[i].IsDone</td>
+                <td>
+                    <form action="/Check" method="post">
+                        <button type="submit" name="change" value="@Model[i].Id">Change Status</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/Delete" method="post">
+                        <button type="submit" name="delete" value="@Model[i].Id">DELETE</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    }
+</table>
